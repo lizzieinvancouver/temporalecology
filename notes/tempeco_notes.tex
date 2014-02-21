@@ -1,8 +1,11 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[top=1.00in, bottom=1.0in, left=1.1in, right=1.1in]{geometry}
 \renewcommand{\baselinestretch}{1.2}
+\usepackage{hyperref}
+\usepackage[hypcap]{caption}
 \usepackage{graphicx}
 \usepackage{natbib}
+\usepackage{todonotes}
 
 \newenvironment{smitemize}{
 \begin{itemize}
@@ -11,6 +14,11 @@
   \setlength{\parsep}{0pt}}
 {\end{itemize}
 }
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LO]{10 December 2013}
+\fancyhead[RO]{{\small Fledge, temporal ecology, fledge !}}
 
 % Two ways to get a dash instead of bullet
 % Make your own command or change base command
@@ -21,62 +29,178 @@
 \bibliographystyle{/Users/Lizzie/Documents/EndnoteRelated/Bibtex/styles/amnat}
 \renewcommand{\refname}{\CHead{}}
 
+%% TO DO!
+% (1) How will toolkit fit in? Add in where that goes (think). And, while doing that place for Bayesian paragraph
+% (2) Add in where extreme events and true limits to species distribution fits in (this goes will assembly angle I think
+
 %% Good point from Ben to add: spatial ecology really developed alongside the advance of spatial data becoming available, temporal ecology is really the same -- climate change means we finally have some data coming forth (more emphasis on time series etc.) to build a discipline of temporal ecology
 \begin{center}
-\noindent {\bf Temporal ecology: \\How climate and time influence species, communities, and ecosystems}\\
+\noindent {\bf Temporal ecology in the Anthropocene}\\ 
+{\small (or)} \\
+\noindent {\bf Time in shifting ecological systems}\\ 
+{\small (or)} \\
+\noindent {\bf Temporal ecology: \\ How time influences species, communities, and ecosystems}\\ 
+% Temporal ecology: \\How climate and time influence species, communities, and ecosystems
+% Temporal ecology \& non-stationary systems
 \end{center}
 % \noindent \emph{Authors:} Elizabeth M. Wolkovich, Benjamin I. Cook \& T. Jonathan Davies\\
-\begin{abstract}
-Over previous decades a growing body of research in ecology has focused on understanding the consequences of anthropogenic habitat loss and fragmentation. This work has led to rapid advances in the field of spatial ecology by integrating across disciplines (e.g., geography and evolution) while developing a body of theories and concepts (e.g., island biogeography, metapopulation, edge effects and corridors), which have shaped both basic and applied research. Equivalent advances in temporal ecology have yet to emerge, but have been the focus of much recent attention due to anthropogenic climate change, which has extended growing seasons in many habitats around the globe. \emph{We believe a new framework is needed that parallels efforts in spatial ecology---building on basic theories and concepts---but structured by time.} This new framework will require concepts and theories that build from the often short timescales of physiological and phenological studies to the longer timescales behind biogeographical gradients of local adaptation and macroevolution. Additionally, it will integrate across approaches from basic time-series methods to applications integrating non-stationarity such as moving windows, wavelets, and analog assemblage analysis. We outline theory and concepts from across disciplines and subdisciplines structured by time, including behaviour (plastic responses of individuals), population dynamics (transient dynamics, extinction debts), community assembly (storage effect, lag effects), climatology (extreme events, trends and variability), to paleoecology (transient and analog assemblages), and evolutionary theory (eco-evo dynamics, phylogenetics, and macroevolution). Our manuscript will highlight the convergent and often-overlapping timescales of these concepts and theories, and how their integration could build a more robust framework for temporal research in ecology.\footnote[1]{Currently there is a bit of overlap between abstract and random main text, will obviously fix that someday.}
-\end{abstract}
-\noindent Over previous decades a growing body of research in ecology has focused on understanding the consequences of anthropogenic habitat loss and fragmentation. This research has led to rapid advances in the field of spatial ecology by integrating across disciplines (e.g., geography and evolution) while developing a body of theories (e.g., island biogeography, metapopulation) and concepts (edge effects and corridors), which have shaped both basic and applied research. Over time the field has tackled major ecological questions by building from single-species metapopulation to multi-species metacommunity models \citep{Pillai2011} and from local to biogeographical scales \citep{bell2001}. As the field of spatial ecology has matured, a suite of dedicated journals  (e.g. \emph{Diversity and Distributions, Journal of Biogeography}) have provided a forum for the exchange of ideas and cross-pollination between otherwise disparate disciplines. \\
-% JD edits: I like this comparison, and perhaps more could be made of it, field of spatial ecologogy as matured, dedicated journals, e.g. diversity and distributions, J. Biogeog, Ecocgraphy, Global Ecology and Biogeog. etc.that aimed at predicting large scale patterns, and various unified models, e.g. Neutral Theory, attempt to explain species spatial distributions from first principles. Equivalent advances in temporal ecology have yet to emerge, but have been focus of much recent attention due to anthropogenic climate change…]
-\\
-Equivalent advances in temporal ecology have yet to emerge, but have been focus of much recent attention due to anthropogenic climate change. Whilst there has been a rapidly growing body of work on understanding how species and communities will respond to increasing rates of anthropogenic climate change, general theories and paradigms to shape and guide studies have yet to emerge. ``This shortcoming derives at least in
-part from a lack of integration across fields: on one hand, many
-macro[folks] have simply ignored the potential role of biotic
-interaction, or barely moved beyond specific examples and broad
-consistency arguments, and on the other hand few microevolutionists
-and ecologists have gone beyond simple extrapolation from
-their hard-won, but short-term, observations'' (Jablonski, 2008). We believe a new framework is needed that parallels efforts in spatial ecology---building on basic theories and concepts---but structured by time (evolutionary process, climatology, time series methods). This temporal focus will require integration across timescales, disciplines and methods. \\
-% [This below paragraph could emphaises that understanding time is not sufficient, truly interdisciplinacry approach needed, require either polymath or collaborations – we advocate the latter]  
-\\
-Mechanistically understanding how diverse species respond to climate change will require basic advances in temporal ecology, including better grounding in climate science (Box 1), greater influence from studies of physiology, behaviour, biogeography, paleobiology and micro as well as macroevolution. Importantly it will require studies that at once consider climatic drivers alongside how biotic interactions may shape species and community phenology patterns. We outline here how the integration of these fields together with ecological concepts of temporal niche space and models of how interannual variability can structure communities provide a framework for temporal community ecology (and show---maybe?---how it may help in building predictive multispecies models of how species and communities will shift with climate change).\\
+% \begin{abstract}
+% [Random scribblings/musings by Lizzie: Best to start abstract with time: possibly highlighting how integral time is inherently to ecology, and has been. Then shift to climate change focus? And onward to point of paper.] Over previous decades a growing body of research in ecology has focused on understanding the consequences of anthropogenic habitat loss and fragmentation. This work has led to rapid advances in the field of spatial ecology by integrating across disciplines (e.g., geography and evolution) while developing a body of theories and concepts (e.g., island biogeography, metapopulation, edge effects and corridors), which have shaped both basic and applied research. Equivalent advances in temporal ecology have yet to emerge, but have been the focus of much recent attention due to anthropogenic climate change, which has extended growing seasons in many habitats around the globe. \emph{We believe a new framework is needed that parallels efforts in spatial ecology---building on basic theories and concepts---but structured by time.} This new framework will require concepts and theories that build from the often short timescales of physiological and phenological studies to the longer timescales behind biogeographical gradients of local adaptation and macroevolution. Additionally, it will integrate across approaches from basic time-series methods to applications integrating non-stationarity such as moving windows, wavelets, and analog assemblage analysis. We outline theory and concepts from across disciplines and subdisciplines structured by time, including behaviour (plastic responses of individuals), population dynamics (transient dynamics, extinction debts), community assembly (storage effect, lag effects), climatology (extreme events, trends and variability), to paleoecology (transient and analog assemblages), and evolutionary theory (eco-evo dynamics, phylogenetics, and macroevolution). Our manuscript will highlight the convergent and often-overlapping timescales of these concepts and theories, and how their integration could build a more robust framework for temporal research in ecology.\footnote[1]{Currently there is a bit of overlap between abstract and random main text, will obviously fix that someday.}
+% \end{abstract}
+%
+%\noindent \emph{Goals of manuscript:}\footnote{I had to write this to remind myself of the point so I could develop a defensible outline, but you should consider whether you agree with these goals and if not, suggest some others or some to add.} Make the case for why a holistic approach to time in ecology is \emph{needed} now, explain why ecology is \emph{ready} for it now; and then \emph{how} to do it.\footnote{I do struggle most with the `how' bit}
+\begin{enumerate}
+\item Opening
+\begin{enumerate}
+\item Rise of spatial ecology. 
+\begin{enumerate}
+\item Due to: urgent applied \emph{questions} at a \emph{scale} larger than traditional ecological methods could address. 
+\item Development of discipline based on \emph{theory}, now they have a coalesced body of theory and concepts
+\end{enumerate}
+Meanwhile, back at the ranch ... 
+\item In the midst of this, climate change was fundamentally shifting how organisms in many habitats experience time
+\item Also, creeping timescale issues in ecology as longer datasets come online
+\begin{enumerate}
+\item longer timeseries of populations appear more weakly regulated and more complex dynamics (Ziebarth et a. 2010)
+\item micro-selection over longer timescales appears weaker (Schoener review, many other citations)
+\end{enumerate}
+\item Pressing questions and new data allowing ecologists to work at new scales mean now is the time for development of temporal ecology
+\end{enumerate}
+\item {\bf Temporal patterns \& scales}
+\begin{enumerate}
+\item One similarity with space: patterns
+\item We focus here on four major ones that are critical and rampant in ecological systems: cycles, trends, noise and events. \\
+This bit could go something like: The tidiest, most classical time series data can be decomposed by age-old traditional methods into cycles and trends (see figure: time-series decomposition with Mauna Loa and Hubbard Brook). Cycles are (define), while trends are (define) and repesent one kind of nonstationarity. Nonstationarity is ... -- note that you can also have nonstationarity in other bits, specifically cycles or noise. Noise is often defined as what remains after cycles and trends have been removed---aka, the `error' or `random' component. Often, within decompositions the noise piece includes events, define events (but see Box: The trouble with events).
+% Save for caption: The tidiest, most traditional time series data can be decomposed by age-old traditional methods into cycles (define) and trends (define); what remains after this---the error or `noise'. Within decompositions noise often includes events, define (but see box) and the critical concept of nonstationarity.
+\item Another similarity: Scale matters (in a painful way)
+\begin{enumerate}
+\item Scale is prevalent issue in space (local to regional disconnects) and time (fast and slow processes and stiff eqns, see Turner \& Carpenter intro)
+\item Cycles can look like noise or events, depending on scale
+\item Address equilibrium issue here? (Non-stationarity does not necessarily mean non-equilibrium, depends on timescales of both.)
+\end{enumerate}
+\item All hail the key transition paragraph! Time is unique compared to space in a couple critical ways:
+\begin{enumerate}
+\item Directional 
+\item Cannot manipulate it (can manipulate drivers or adjust temporal aspects of interactions)---but the real heart of it you can't change. Space is damn easy to manipulate (for example, people who cut up pieces of moss to build small worlds).
+\item Humans get a very tiny snapshot of it: while they can run over the whole globe to map spatial patterns.
+\item This means we have never been very comfortable with time, especially compared to space.
+\end{enumerate}
+\item These unique attributes of time (especially in comparison with space), we argue, drive how ecologists have tended to view and approach time.
+\end{enumerate}
+\item {\bf Temporal patterns in ecology}
+\begin{enumerate}
+\item Ecology has a long history of incorporating (or ignoring, but I guess we don't need to say that) temporal dimensions in their research: a special focus has always been cycles and noise.
+\begin{enumerate}
+\item Cycles \& \emph{fluctuations}\(\rightarrow\) Interactions and synchrony 
+\begin{enumerate}
+\item Population classics (focus on fluctuations, lynxes, Lotka-Volterra etc.)
+\item Physiology/behaviour
+\item Communities: coexistence theory based on fluctuating environments; see MacArthur 1958 for intra and inter-annual examples, Hutchinson's paradox of the plankton 
+\end{enumerate}
+\item Noise (\(\rightarrow\) trigger regime shifts, state changes etc.) and its colours
+\end{enumerate}
+\item More recently, they have gained interest (and perhaps traction) in focusing on events and nonstationarity (though there is ample room for progress here, though again, I guess we don't have to say that here)
+\begin{enumerate}
+\item Try to fit in some history on trends here: Ecosystem stuff from Kendra (also Gleason 1926)
+\item Add stuff on events (older stuff from resilience literature and recent stuff from climate change)
+\item Add stuff on regime shifts (triggered by events, but also slow scale forcing)
+\item Many anthropogenic forces affecting ecological systems are non-stationary. Underlying assumptions of most ecological theory and approaches (field and statistical methods) are not. \footnote{Even hypotheses predicting non-stationary processes are often built on stationary assumptions, such as succession \autoref{successfig}} 
+\end{enumerate}
+\end{enumerate}
+\item {\bf The modern discipline of temporal ecology}\footnote{Yes, I do hate this section title and would like help: Improving temporal ecology or Building the field of temporal ecology?}
+\begin{enumerate}
+\item Complexities in ecological time series (see previous section) and feedbacks mean ecologists have often tended to avoid temporal issues---at least in comparison with how omnipotent temporal issues are. We argue, ecology could improve with a more constant temporal focus---in both approaches to basic methods and in building concepts and theory.
+\end{enumerate}
+\item \emph{Building depth in approaches \& methods} 
+\begin{enumerate}
+\item Address current major disconnect between timescale of interest and methods: figure out relevant temporal scales for each study just as you figure out relevant spatial scales (paleo and restoration ecology and succession stuff already do):
+\begin{enumerate}
+\item of interest (equilibrium focus means this is often ridiculously long)
+\item of mechanism
+\item of methods (often mismatch between this and above two, noting generation time is often major point)
+\end{enumerate}
+\item Train all ecologists in temporal ecology; approach all ecological questions with more overtly temporal perspective and address the above mismatch by:
+\begin{enumerate}
+\item Snore: Using space for time
+\item Contrasting methods
+\item Placing years of study in relevant climate space (`these years were \(X\%\) of mean climate variable'); work across relevant years and place in context how they would add up (e.g., in US southwest need to think of El Ni\~no, La Ni\~na and all the duller years in between---how do these combine to fully predict ecosystem and such dynamics) 
+\item Building methods toolkits (see Box: A taster of time-series methods)
+\end{enumerate}
+\item If we do all this, datasets will come along. 
+\end{enumerate}
+\item \emph{Building depth in concepts \& theory} 
+\begin{enumerate}
+\item Building depth in how we approach temporal dimensions of ecological questions and their implementation is a good start, but ecologists need to revisit concepts and theory from a stronger temporal focus (including cycles, events and nontationarity). This means both more clearly recognizing temporal aspects of theories and concepts and diversifying the temporal patterns (nonstationarity and events, especially) they consider within temporal dimensions of theories.
+\item Return to Snowy River: Cycles
+\begin{enumerate}
+\item One final similarity with space: Pattern can drive process ... Temporal patterns can drive process, but processes also produce these patterns 
+\item Nisbet \& Gurney 1985: ... and note that the explicit time dependence of these quantities also encompasses an implicit time dependence via (for example) dependence, on population density or temperature (see, for example, Curry et al., 1978).
+\item This is still a fundamental question (with important applied angles re: climate change): How to differentiate external forcing from internal autonomous cycling? How much do fluctuations generate all other fluctuations? (Armstong \& McGhee)
+\end{enumerate}
+\item Linking space and time
+\begin{enumerate}
+\item Recognize hidden spatial and temporal dimensions in current theory (e.g., island biogeography and hidden temporal component in distance to mainland versus number of migrants is also frequency of migrants, what happens when mainland populations are non-stationary through time? Also, can mention Chesson)
+\item Transition to patterns on the landscape: Case studies of measles and Weaver/Craine and Dustbowl, perhaps?
+\end{enumerate}
+\item Contingency: How persistence, irreversability and nonlinearities define communities and ecosystems
+\begin{enumerate}
+\item Patterns on landscape are result of multiple successional pathways: Historical contingency stories (propagules, fire disturbances, climate etc.) \(\rightarrow\) all part of the assembly process but more of an `event filter' on assembly process than the usual mean climates people think of.
+\item See succession figure: contrast underlying assumptions of stationarity and the importance of mean climate, versus multiple pathways on certain scales when you add in an event filter (see Ayres email), versus regime shifts and such once you add in events and nonstationarity (again, some refs from Ayres)
+\item Also development of niche to fluctuating resources niche concepts to where to go next nonstationarity and coexistence mechanisms 
+\item Some questions: What has to happen for a process to be irreversible? Related, Does nonstationarity make true regime shifts more common (harder to get back on track when track has shifted)?
+\end{enumerate}
+\item Scale
+\begin{enumerate}
+\item This is a fundamental question: How do slow and fast processes combine to produce observed temporal dynamics? Do biotic versus abiotic processes govern different timescales? How does generation time matter and what not (Jonathan's mouse and elephant story)?
+\item Recognize that temporal perspectives fundamentally work across-disciplines \& across scales (Scales of climate change \autoref{climatescalesfig}, concepts table -- see xls file)
+\item Work across relevant disciplines (look out for cross-disciplinary perspectives on the same damn thing: lag effects vs. carry-over effects)
+\end{enumerate}
+\end{enumerate}
+\item Conclusions: Natural progression
+\begin{enumerate}
+\item Data, methods are available now 
+\item Theory is coming along (Chessonian coexistence, something else)
+\item Development of other fields (Weart 2013 for climate, evolution)
+\item Climate change lends some pressing questions, there are lots of good fundamental ones too---people should get on this
+\end{enumerate}
+\end{enumerate}
+
+\noindent {\bf Box: The trouble with events} \\
+\noindent Events (\(\rightarrow\) trigger regime shifts, state changes etc.) -- point out it's the messiest definition\\
+\begin{enumerate}
+\item Eco-evolutionary dynamics (Sewall Wright or some other more relevant classic?)
+\item Late 1700s drought and North American forests
+\item Green Sahara
+\item Loblolly example of events versus averaging
+\item Extreme value theory (?)
+\item Black swans
+\end{enumerate}
+\noindent {\bf Box: A taster of time-series methods}\\
 \newpage
 \begin{figure}[h!]
 \centering
-\noindent \includegraphics[width=1\textwidth]{/Users/Lizzie/Documents/git/manuscripts/tansleyMe/figures/ecoevoclimate/climateEcoEvo_alltogethernowPlus.png}
+\noindent \includegraphics[width=0.8\textwidth]{/Users/Lizzie/Documents/git/manuscripts/temporalecology/figures/ts_babies/tspatterns.png}
+\caption{Conceptual figure for which I would like to use real data: Classical decomposition of a time-series breaks out cyclic (often seasonal) components, trends and leaves behind noise. Research in population and community ecology has traditionally focused on cycles and noise, but understanding how trends is currently a good deal important. Also we define here three major attributes of time that affect ecological processes: cycles (and species interactions with cycles), events and trends---both of which may trigger regime shifts. \label{decompfig}}
 \end{figure}
-\noindent {\bf Box 1: Climate, eco-evo research and timescales}\\
-\\
-\noindent \emph{Old text we could adjust and keep figure.} A fundamental step in the advancement of ecological research is recognition that climate is non-stationary and controlled by distinct but overlapping processes driving variability and trends on seasonal, yearly, decadal, and centennial and longer timescales (in figure blue represents cooling events, while red represents warming events; details given in Supporting Information Table S1). For example, year to year variability in temperature and precipitation in many regions is dominated by modes of climate variability internal to the atmosphere-ocean system, such as the North Atlantic Oscillation (NAO) and the El Ni\~{n}o Southern Oscillation (ENSO). These same patterns will remain important controllers of regional climate variability in the coming centuries, with the additional consideration that this variability will be super imposed on long-term warming trends driven by greenhouse gases. Regional expressions of long-term climate change will then be a function of both these short-term and long-term processes \citep{deser2012}, and will need to be accounted for by studies seeking to understand species and ecosystem responses to climate variability on all temporal scales. \\
-\\
-A second step forward will require the explicit integration of biotic responses (from behavioral to evolutionary dynamics, such as adaptation and speciation), and their timescales (top of figure and associated gray shading), into models of biotic responses. For example, researchers need to consider the degree to which observed changes over the last fifty years are an expression of phenotypic plasticity, an evolutionary response to a changing climate, or both. Recent evidence suggests that evolutionary responses can be rapid, perhaps surprisingly so \citep{schoener2011}, although to date the magnitude of species evolutionary responses to climate change have generally not been incorporated into predictive models. Work on ecological responses to climate change is further complicated by the likelihood that future climate will represent a no-analog state, i.e. a climate that is without precedent within the last 100-200 years, and for which we have few observations or data \citep{veloz2012}. Contemporary observational data across species will, therefore, provide only limited information on species' responses in the future in the absence of an explicit evolutionary framework that considers the potential for adaptation.  \\
-\\
-Current rates of warming can make predictions of ecological processes into the future difficult and potentially misleading if the ecological models used are solely calibrated and validated on the observational period. However, insight might be gained by looking further in the past, to other recent time periods outside the range of variability during the observational era. Climate events such as the Younger Dryas (\(\sim\)11,300 ky BP), the Medieval Climate Anomaly (\(\sim\)950 C.E-1250 C.E.), and others all represent time periods with climates far outside the range of the last 200 years, and have already been used to offer insights into ecological prediction into the 21st century \citep{veloz2012}. Ultimately, the dynamic nature of climate over long and short timescales means that research addressing how plants respond to climate requires an integrative approach, working across methods, timescales and species. \\
-% Can we add here that each species has experienced variation in climate based on range contractions/expansions, refugia and also generation time---how long each individual integrates temporal variation in climate? Just somehow try to bring in two major points: timescales and species diversity? . . . Or, could just say timescales here and then add this last sentence about timescales, methods and species to end of disciplinary perspectives.
+
+\begin{figure}[h!]
+\centering
+\noindent \includegraphics[width=1\textwidth]{/Users/Lizzie/Documents/git/manuscripts/temporalecology/figures/handdrawn/figsuccsn_v2.png}
+\caption{Conceptual figure: Goal of this figure if we can make it work is to review major theory based on time in ecology---succession---and its underlying stationarity assumptions (top), but also point out other possibilities. In the middle, climate with some cycling to it and how this may shift ecosystem development \todo[inline]{Kendra, assuming you'll have some good input, references and thoughts in general on this, axes following Peltzer et al. 2010, convergent evolution on the whirly arrows though.} and bottom, how non-stationarity may induce regime shifts. {\bf I will add in to the biotic filter: Hutchinsonian niche on top, Chessonian niche in middle, and nonstationarity in niche theory (does evolution fit in here perhaps?) on bottom.} \label{successfig}}
+\end{figure}
 
 \newpage
-\noindent \emph{Possible outline, set up as the basic `why now, what's the benefit of this, how would you implement it now, and where do we go from here.' Other strategies, ideas, topics, angles, figures, boxes and tables welcome.}
+\begin{figure}[h!]
+\centering
+\noindent \includegraphics[width=1\textwidth]{/Users/Lizzie/Documents/git/manuscripts/temporalecology/figures/ecoevoclimate/climateEcoEvo_alltogethernowPlus.png}
+\caption{Timescales of climate events and processes versus ecological processes and traditional methods \label{climatescalesfig}}
+\end{figure}
 
-\section{Introduction}
-\begin{smitemize}
-\dashme Stuff about spatial ecology and comparisons (could be a little text and a box? See next point also)
-\dashme Somewhere probably good to point out what's different between time and space (time is often more directional---though space has some directionality, latitudes, etc. and, relatedly, the non-stationarity of temporal dynamics due to climate) but also intrinsic links (Ben's figure on spatial vs. temporal scales of weather patterns, see end of document).
-\end{smitemize}
-\section{Why now?* Rise of temporal dimensions in ecology}
-\emph{*Note: Need much better subheadings if we stick with this framework}
-\begin{smitemize}
-\dashme Increasing availability of long-term data (Table?)
-\dashme Climate change (stochastic `noise' vs. directional shifts)
-\dashme Natural progression 
-\end{smitemize}
-
-\section{Benefits}
-\begin{smitemize}
-\dashme Dominant questions in ecology (e.g., what structures/controls populations/species/ communities/ecosystems) are underlined by finding factors that don't wash out over longer timescales
-\dashme Relatedly, conservation/applied science-wise goals have temporal components
-\dashme Cannot identify dominant controllers without temporal perspectives. Possibe case studies of this (could include all in text, all in table or some in a box or such):
+\clearpage
+\newpage
+\noindent \emph{More stuff it may be good to work in:}\\
+\noindent Box or somewhere above we can address why non-stationarity may matter? \\
+Cannot identify dominant controllers without temporal perspectives. Possibe case studies of this (could include all in text, all in table or some in a box or such):
 \begin{smitemize}
 \dashme \emph{Persistence of rare events:} Late 1700s drought and frost event controlling northeastern US forests through today (assuming paper is out then)
 \dashme \emph{Lag effects:} example from experiment or such
@@ -86,53 +210,60 @@ Current rates of warming can make predictions of ecological processes into the f
 have identified causal mechanisms underlying temporal variation in the strength,
 direction and form of selection, variation in environmental conditions driven by climatic fluctuations appear to be common and important.'' \citep{Siepielski:2009ti}
 \end{smitemize}
+``The stagnant condition [mid 1900s] of climatology mirrored a deep belief
+that climate itself was basically changeless.'' Weart \emph{PNAS}, 2012\\
+
+\noindent Additionally, possibly make point about anthropogenic non-stationarity: many anthropogenic-induced global changes may represent relatively unique temporal patterns compared to many previous?
+\begin{enumerate}
+\item Climate change compared to: cyclical events (on some time scale): heat bursts, cold fronts, NAO, ENSO, Ice ages
+\item Climate change compared to: Non-stationarity but covering shorter timescales (when you consider how long effects of climate change will last without geoengineering): Younger Dryas, 8.2ka event, volcanoes
+\item I was thinking of habitat modification (dams, urbanization) but it's are probably on similar timescales to some of the above (e.g., a volcano or such---major event with change, but then things slowly go back to before), but perhaps can make point that we are introducing more of these sorts of events than occurred before anthropocene (this could go in connect spatial-temporal section).
+\end{enumerate} 
+
+\noindent Temporal scaling up:
+\begin{enumerate}
+\item Scaling up time: depends on (1) the time in future of interest and (2) how impactful events vs. cycles vs. trends are (and we just don't know because we don't have a field of temporal ecology).
+\item Handling multiple scales of cycles (daily, seasonal, annual etc.)
+\item Scaling up: Merging records by climate space?
+\end{enumerate}
+
+{\bf Other questions, we should agree on which go in manuscript:}
+\begin{smitemize}
+\item For processes that are temporally linked today, will they move/change at the same rate in the future? (may be useful to break into two categories: a) biotic-biotic things like food supply for hatching birds, b) biotic-abiotic things like would phenology fit here?)
+\item What are the conditions or timescales when abiotic v. biotic drivers tend to dominate? This is an old one but good still, I think.
+\item Two versions of the same thing: what magnitude of events against background mean and cyclic conditions produce state shifts? How severe/different/"black-swan-y" do events have to be to change trajectories? Fire severity people think about this a lot.
+\item Do species and ecosystems respond differently to extreme events versus gradual changes in climate? What ramifications does this have for ecological responses to future climate change? 
+\item How long do past disturbance and climate disruptions persist in community composition dynamics and ecosystem functioning (productivity, carbon and nutrient cycling, etc)?
+\item How generalizable are ecological responses to climate change in the paleo-record to future climate change?
+\item Which species traits are strongly constrained by evolution? How phenotypically plastic are species?
+\item Are any ecological responses to climate irreversible? Over what timescales?
+\item How frequent do extreme events have to be to impact long-term coexistence?
+\item Stuff about non-stationarity (does it alter tradeoffs and mechanisms of coexistence?)
+\item When do trends become important versus background noise?
+\item Is it possible to predict/characterise when there will be temporal mismatches between drivers and biological responses [for example, overcompensation leading to chaotic cycles, or lags in evolutionary adaptation etc.]?
 \end{smitemize}
 
-\section{How to do it}
-\begin{smitemize}
-\dashme Think about timescales formally (paleo and restoration ecology and succession stuff already do):
-\begin{smitemize}
-\dashme of interest (equilibrium focus means this is often ridiculously long)
-\dashme of mechanism
-\dashme of methdos (often mismatch between this and above two, noting generation time is often major point)
-\end{smitemize}
-\dashme Include time in studies
-\begin{smitemize}
-\dashme Snore: Space for time
-\dashme Contrast methods
-\dashme Place years of study in relevant climate space (`these years were \(X\%\) of mean climate variable'); work across relevant years and place in context how they would add up (e.g., in US southwest need to think of El Ni\~no, La Ni\~na and all the duller years in between---how do these combine to fully predict ecosystem and such dynamics) 
-\end{smitemize}
-\dashme Emphasize and develop temporal theory \& concepts
-\begin{smitemize}
-\dashme Storage effect model
-\dashme Non-equilibrium and transient dynamics (phase planes)
-\dashme Lag effects
-\dashme Extinction debt
-\dashme Multiple stable equilibria, alternative stable states and other vomit
-\dashme Eco-evo dynamics
-\end{smitemize}
-\dashme Use methods to identify temporal patterns: especially think about repeating periods when designing studies (just as you can find the relevant scale in spatial ecology), trends, variability and extreme events.
-\begin{smitemize}
-\dashme Time series basics (decomposition etc.)
-\dashme Changepoints and breakpoints
-\dashme Wavelets, moving windows etc. 
-\dashme Almost unrelated point, how do Bayesian priors hold up in a non-stationary world?
-\end{smitemize}
-\end{smitemize}
-\section{Where to next? Prescriptions and suggestions}
-%\noindent \emph{No more `space, the final frontier' stuff.}
-\begin{smitemize}
-\dashme Relevant spatial scales versus relevant temporal scales
-\dashme Train students etc. 
-\dashme Need much more here
-\end{smitemize}
+
+\clearpage
+\newpage
+\noindent {\Large Old stuff I am holding onto for now: No need to reread unless you want}\\
+
+\noindent Over previous decades a growing body of research in ecology has focused on understanding the consequences of anthropogenic habitat loss and fragmentation. This research has led to rapid advances in the field of spatial ecology by integrating across disciplines (e.g., geography and evolution) while developing a body of theories (e.g., island biogeography, metapopulation) and concepts (edge effects and corridors), which have shaped both basic and applied research. Over time the field has tackled major ecological questions by building from single-species metapopulation to multi-species metacommunity models \citep{Pillai2011} and from local to biogeographical scales \citep{bell2001}. As the field of spatial ecology has matured, a suite of dedicated journals  (e.g. \emph{Diversity and Distributions, Journal of Biogeography}) have provided a forum for the exchange of ideas and cross-pollination between otherwise disparate disciplines. \\
+% JD edits: I like this comparison, and perhaps more could be made of it, field of spatial ecologogy as matured, dedicated journals, e.g. diversity and distributions, J. Biogeog, Ecocgraphy, Global Ecology and Biogeog. etc.that aimed at predicting large scale patterns, and various unified models, e.g. Neutral Theory, attempt to explain species spatial distributions from first principles. Equivalent advances in temporal ecology have yet to emerge, but have been focus of much recent attention due to anthropogenic climate change…]
+\\
+Equivalent advances in temporal ecology have yet to emerge, but have been focus of much recent attention due to anthropogenic climate change. Whilst there has been a rapidly growing body of work on understanding how species and communities will respond to increasing rates of anthropogenic climate change, general theories and paradigms to shape and guide studies have yet to emerge. ``This shortcoming derives at least in part from a lack of integration across fields: on one hand, many
+macro[folks] have simply ignored the potential role of biotic
+interaction, or barely moved beyond specific examples and broad
+consistency arguments, and on the other hand few microevolutionists
+and ecologists have gone beyond simple extrapolation from
+their hard-won, but short-term, observations'' (Jablonski, 2008). We believe a new framework is needed that parallels efforts in spatial ecology---building on basic theories and concepts---but structured by time (evolutionary process, climatology, time series methods). This temporal focus will require integration across timescales, disciplines and methods. \\
+% [This below paragraph could emphaises that understanding time is not sufficient, truly interdisciplinacry approach needed, require either polymath or collaborations – we advocate the latter]  
+\\
+Mechanistically understanding how diverse species respond to climate change will require basic advances in temporal ecology, including better grounding in climate science (Box 1), greater influence from studies of physiology, behaviour, biogeography, paleobiology and micro as well as macroevolution. Importantly it will require studies that at once consider climatic drivers alongside how biotic interactions may shape species and community phenology patterns. We outline here how the integration of these fields together with ecological concepts of temporal niche space and models of how interannual variability can structure communities provide a framework for temporal community ecology (and show---maybe?---how it may help in building predictive multispecies models of how species and communities will shift with climate change).\\
 
 \newpage
 \noindent \emph{Random references}\\
-\\
-``The stagnant condition [mid 1900s] of climatology mirrored a deep belief
-that climate itself was basically changeless.'' Weart \emph{PNAS}, 2013\\
-\\
+
 ``In fact, in the founding paper on selection
 gradients (15), mortality in house sparrows (Passer
 domesticus) after a winter storm provided an illustrative
@@ -151,6 +282,13 @@ example for the computations.'' \citep{schoener2011}\\
 
 \end{document}
 
+%%%%
+%%%%
+%%%%
+
+Big thoughts (sic): \\
+Is Chessonian coexistence to temporal ecology what Island biogeography is to spatial ecology?\\
+Almost unrelated point, how do Bayesian priors hold up in a non-stationary world?
 
 cite Martie's paper AmNat 1984 paper: The Quaternary history of the temperate forests has been one of repeated disruptions by glaciations such that present forest communities must be seen as transient assem- blages rather than stable sets of coevolved species.\\
 \\
@@ -179,4 +317,12 @@ Schmid, 1998). \\
 This gap comes in large part from the lack of integration across timescales and disciplines relevant to predicting the timing and plasticity of species' phenologies. Such integration will require concepts and theories that build from the often short timescales of physiological studies of phenology to the longer timescales behind biogeographical gradients of local adaptation and macroevolution. Further, it will require understanding how both abiotic and biotic forces shape plant phenology while recognizing the repetitive, persistent patterns of climate variability that plants experience---operating on the scales of days to decades and millennia---as well as less common dynamic shifts, including current increases in temperatures. 
 
 % From JD's Tansley edits: Spatially structured metapopulation models have provided insights into regional stability through time (Hanski 1999) and, more recently, as models have progressed from single-to-multiple species, metacommunity theory has informed our understanding of food web complexity (Pillai et al.). Spatial ecology has also scaled up from local interactions in space to biogeographical scales (Bell 2001), and macroecology (Brown & Maurer), which explores large-scale spatial processes, is now considered a field in its own right. A greater understanding of the relationships between area and species distributions has provided projections on the likely loss of diversity with shifting climates (Thomas et al.XXXX – the paper that everyone hates), although precise estimates remain controversial (He & Hubbell). 
+
+\noindent \emph{Box 1: Old text we could adjust and keep figure.} A fundamental step in the advancement of ecological research is recognition that climate is non-stationary and controlled by distinct but overlapping processes driving variability and trends on seasonal, yearly, decadal, and centennial and longer timescales (in figure blue represents cooling events, while red represents warming events; details given in Supporting Information Table S1). For example, year to year variability in temperature and precipitation in many regions is dominated by modes of climate variability internal to the atmosphere-ocean system, such as the North Atlantic Oscillation (NAO) and the El Ni\~{n}o Southern Oscillation (ENSO). These same patterns will remain important controllers of regional climate variability in the coming centuries, with the additional consideration that this variability will be super imposed on long-term warming trends driven by greenhouse gases. Regional expressions of long-term climate change will then be a function of both these short-term and long-term processes \citep{deser2012}, and will need to be accounted for by studies seeking to understand species and ecosystem responses to climate variability on all temporal scales. \\
+\\
+A second step forward will require the explicit integration of biotic responses (from behavioral to evolutionary dynamics, such as adaptation and speciation), and their timescales (top of figure and associated gray shading), into models of biotic responses. For example, researchers need to consider the degree to which observed changes over the last fifty years are an expression of phenotypic plasticity, an evolutionary response to a changing climate, or both. Recent evidence suggests that evolutionary responses can be rapid, perhaps surprisingly so \citep{schoener2011}, although to date the magnitude of species evolutionary responses to climate change have generally not been incorporated into predictive models. Work on ecological responses to climate change is further complicated by the likelihood that future climate will represent a no-analog state, i.e. a climate that is without precedent within the last 100-200 years, and for which we have few observations or data \citep{veloz2012}. Contemporary observational data across species will, therefore, provide only limited information on species' responses in the future in the absence of an explicit evolutionary framework that considers the potential for adaptation.  \\
+\\
+Current rates of warming can make predictions of ecological processes into the future difficult and potentially misleading if the ecological models used are solely calibrated and validated on the observational period. However, insight might be gained by looking further in the past, to other recent time periods outside the range of variability during the observational era. Climate events such as the Younger Dryas (\(\sim\)11,300 ky BP), the Medieval Climate Anomaly (\(\sim\)950 C.E-1250 C.E.), and others all represent time periods with climates far outside the range of the last 200 years, and have already been used to offer insights into ecological prediction into the 21st century \citep{veloz2012}. Ultimately, the dynamic nature of climate over long and short timescales means that research addressing how plants respond to climate requires an integrative approach, working across methods, timescales and species. \\
+% Can we add here that each species has experienced variation in climate based on range contractions/expansions, refugia and also generation time---how long each individual integrates temporal variation in climate? Just somehow try to bring in two major points: timescales and species diversity? . . . Or, could just say timescales here and then add this last sentence about timescales, methods and species to end of disciplinary perspectives.
+
 
